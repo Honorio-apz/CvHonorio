@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honorio Apaza - CS Master & AI Researcher</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --celeste-aimara: #00a8cc;
+            --celeste-aimara-light: rgba(0, 168, 204, 0.1);
+            --celeste-aimara-border: rgba(0, 168, 204, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #374151;
+            background: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section:first-child {
+            padding-top: 2rem;
+        }
+
+        /* Header Section */
+        .header-section {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--celeste-aimara), #0891b2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 3rem;
+            color: white;
+            font-weight: 600;
+        }
+
+        .name {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: #111827;
+            margin-bottom: 0.25rem;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .title-line {
+            width: 4rem;
+            height: 0.25rem;
+            background: var(--celeste-aimara);
+            border-radius: 2px;
+            margin: 0 auto 0.25rem;
+        }
+
+        .subtitle {
+            color: #6b7280;
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--celeste-aimara-light);
+            color: var(--celeste-aimara);
+            font-weight: 600;
+            padding: 0.375rem 0.75rem;
+            border-radius: 0.375rem;
+            font-size: 0.75rem;
+            margin: 0.5rem 0.25rem;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--celeste-aimara);
+            margin-bottom: 1rem;
+        }
+
+        /* Description */
+        .description {
+            font-size: 1rem;
+            color: #374151;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        /* Cards */
+        .card {
+            background: #f9fafb;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--celeste-aimara-border);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .card-title {
+            font-weight: 700;
+            color: #111827;
+            font-size: 1rem;
+        }
+
+        .card-period {
+            background: var(--celeste-aimara-light);
+            color: var(--celeste-aimara);
+            font-weight: 600;
+            padding: 0.125rem 0.75rem;
+            border-radius: 0.375rem;
+            font-size: 0.75rem;
+        }
+
+        .card-subtitle {
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-description {
+            color: #374151;
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+
+        /* Thesis Section */
+        .thesis-card {
+            background: #f9fafb;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            border: 0px solid var(--celeste-aimara-border);
+            margin-bottom: 2.5rem;
+        }
+
+        .thesis-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 1rem;
+        }
+
+        /* Publications Grid */
+        .publications-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .publication-card {
+            background: #f9fafb;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            border: 0px solid var(--celeste-aimara-border);
+        }
+
+        .publication-title {
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .publication-venue {
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-doi {
+            font-size: 0.75rem;
+            color: #9ca3af;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .skill-category {
+            /* background: #f9fafb;*/
+            border-radius: 0.75rem;
+            padding: 1rem;
+            border: 0px solid var(--celeste-aimara-border); /* bordes */
+        }
+
+        .skill-category-title {
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 0.75rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: white;
+            color: var(--celeste-aimara);
+            border: 1px solid var(--celeste-aimara);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .skill-tag:hover {
+            background: var(--celeste-aimara);
+            color: white;
+        }
+
+        /* Languages Grid */
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .language-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: #f9fafb;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            border: 1px solid var(--celeste-aimara-border);
+        }
+
+        .language-name {
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .language-level {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        /* Table */
+        .table {
+            width: 100%;
+            text-align: left;
+            font-size: 0.875rem;
+            border: 1px solid var(--celeste-aimara-border);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .table tr {
+            border-bottom: 1px solid var(--celeste-aimara-border);
+        }
+
+        .table tr:last-child {
+            border-bottom: none;
+        }
+
+        .table td {
+            padding: 0.5rem 1rem;
+        }
+
+        .table td:first-child {
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .table td:last-child {
+            color: #374151;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .name {
+                font-size: 2.25rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .card-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .publications-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="min-h-screen bg-white">
+        <section class="container">
+            <div class="section">
+                <div class="header-section">
+                    <!--<div class="profile-image">HA</div>-->
+                    <h1 class="name">Honorio Apaza</h1>
+                    <div class="title-line"></div>
+                    <p class="subtitle">Computer Science Master • AI Researcher • NLP Specialist</p>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span>📍</span>
+                            <span>Ilo, Moquegua, Perú</span>
+                        </div>
+                        <div class="contact-item">
+                            <span>📧</span>
+                            <span>honorio.apz@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span>📱</span>
+                            <span>+51 999 406 058</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <span class="badge">IEEE Senior Member</span>
+                        <span class="badge">AiMARA Research Group Founder</span>
+                    </div>
+                </div>
+
+                <p class="description">
+                                            My research interests lie in Artificial Intelligence, specializing in Natural Language Processing (NLP). This includes neural machine translation for low-resource languages like Aymara, text mining for recommendation systems, and the classification, summarization, and clustering of textual information across various domains, such as legal.
+
+                </p>
+
+                <div class="mb-10">
+                    <h2 class="section-title">Master's Thesis</h2>
+                    <div class="thesis-card">
+                        <div class="thesis-title">Neural Machine Translator for Native Language Aymara</div>
+                        <p class="card-description">
+                            This thesis develops and evaluates neural machine translation models for translating from Spanish to Aymara, 
+                            focusing on Seq2Seq with attention and Transformer architectures. Results show that the Transformer outperforms 
+                            Seq2Seq across key metrics, with higher masked accuracy (0.87 vs. 0.68), better BLEU (0.042 vs. 0.031), 
+                            and improved ROUGE and METEOR scores, highlighting its superior accuracy and efficiency for low-resource 
+                            languages like Aymara.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mb-10">
+                    <h2 class="section-title">Education</h2>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Master's degree in Computer Science</div>
+                            <span class="card-period">2021-2023</span>
+                        </div>
+                        <div class="card-subtitle">Universidad Nacional de San Agustín, Arequipa</div>
+                        <div class="card-description">Master of Computer Science candidate</div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Systems and Computer Engineering</div>
+                            <span class="card-period">2017-2018</span>
+                        </div>
+                        <div class="card-subtitle">Universidad Nacional de Moquegua</div>
+                        <div class="card-description">
+                            Engineer degree. Winning thesis of the research project contest with financing of mining fees, 
+                            royalty and mining royalties, UNAM-2016.
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Bachelor in Systems and Computer Engineering</div>
+                            <span class="card-period">2012-2016</span>
+                        </div>
+                        <div class="card-subtitle">Universidad Nacional de Moquegua</div>
+                        <div class="card-description">
+                            Finished with Scholarship of the National Scholarship and Educational Credit Program (Beca 18 Perú)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-10">
+                    <h2 class="section-title">Professional Experience</h2>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Professor</div>
+                            <span class="card-period">2023 - Present</span>
+                        </div>
+                        <div class="card-subtitle">Universidad Nacional de Moquegua, Ilo</div>
+                        <div class="card-description">
+                            Teaching courses: Artificial Intelligence, Design Analysis of Algorithms, Database, Programming Fundamentals, 
+                            Data Structure, Thesis Seminar and Research Projects.
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">AI Developer (NLP)</div>
+                            <span class="card-period">2022</span>
+                        </div>
+                        <div class="card-subtitle">ITACA LEGAL S.A.C, Lima, Peru</div>
+                        <div class="card-description">
+                            Developed NLP Models for legal documents: Text classification, summarization, clustering, and text retrieval.
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">AI Model Developer (NLP)</div>
+                            <span class="card-period">2021</span>
+                        </div>
+                        <div class="card-subtitle">INDECOPI, Lima, Peru</div>
+                        <div class="card-description">
+                            Improvement of behavioral dictionaries and recommender models for infringing behaviors. 
+                            Algorithms used: BERT, Word2vec, TF-IDF, Logistic Regression, VSM, Naive Bayes.
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Professor Assistant & Researcher</div>
+                            <span class="card-period">2018-2022</span>
+                        </div>
+                        <div class="card-subtitle">Universidad Nacional de Moquegua, Ilo</div>
+                        <div class="card-description">
+                            Principal researcher of the project: "Text mining to build a data mining model for the recommendation of job offers". 
+                            Winner of the thesis project research with financing of mining fees, royalty and mining royalties, UNAM-2016.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-10">
+                    <h2 class="section-title">Recent Publications</h2>
+                    <div class="publications-grid">
+                        <div class="publication-card">
+                            <div class="publication-title">Development of a Chatbot Prototype to Serve University Graduates in the Process of Obtaining Degrees and Professional Titles</div>
+                            <div class="publication-venue">Intelligent Systems and Applications, Springer Nature Switzerland (2024)</div>
+                            <div class="publication-doi">DOI: 10.1007/978-3-031-66336-9_30</div>
+                        </div>
+
+                        <div class="publication-card">
+                            <div class="publication-title">NLP Models to Clarify Degree Regulations in Peruvian Universities</div>
+                            <div class="publication-venue">IEEE ANDESCON (2024)</div>
+                            <div class="publication-doi">DOI: 10.1109/ANDESCON61840.2024.10755580</div>
+                        </div>
+
+                        <div class="publication-card">
+                            <div class="publication-title">Peruvian Sign Recognition (LSP) to the Native Quechua Language Using LSTM</div>
+                            <div class="publication-venue">IEEE ANDESCON (2024)</div>
+                            <div class="publication-doi">DOI: 10.1109/ANDESCON61840.2024.10755865</div>
+                        </div>
+
+                        <div class="publication-card">
+                            <div class="publication-title">Neural Machine Translation for Aymara to Spanish</div>
+                            <div class="publication-venue">Intelligent Systems and Applications, Springer (2023)</div>
+                            <div class="publication-doi">DOI: 10.1007/978-3-031-16075-2_19</div>
+                        </div>
+
+                        <div class="publication-card">
+                            <div class="publication-title">Neural Machine Translation for Native Language Aymara to English</div>
+                            <div class="publication-venue">Future Technologies Conference (FTC) 2022, Springer (2023)</div>
+                            <div class="publication-doi">DOI: 10.1007/978-3-031-18344-7_40</div>
+                        </div>
+
+                        <div class="publication-card">
+                            <div class="publication-title">Job Recommendation Based on Curriculum Vitae Using Text Mining</div>
+                            <div class="publication-venue">Advances in Information and Communication, Springer (2021)</div>
+                            <div class="publication-doi">DOI: 10.1007/978-3-030-73100-7_72</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-10">
+                    <br>
+                    <h2 class="section-title">Skills & Expertise</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3 class="skill-category-title">Research Areas</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Natural Language Processing</span>
+                                <span class="skill-tag">Neural Machine Translation</span>
+                                <span class="skill-tag">Deep Learning</span>
+                                <span class="skill-tag">Text Mining</span>
+                                <span class="skill-tag">Low-resource Languages</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3 class="skill-category-title">Programming Languages</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Java</span>
+                                <span class="skill-tag">C++</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3 class="skill-category-title">AI/ML Technologies</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">BERT</span>
+                                <span class="skill-tag">Transformers</span>
+                                <span class="skill-tag">LSTM</span>
+                                <span class="skill-tag">Word2Vec</span>
+                                <span class="skill-tag">TF-IDF</span>
+                                <span class="skill-tag">CNN</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3 class="skill-category-title">Tools & Frameworks</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">PyTorch</span>
+                                <span class="skill-tag">TensorFlow</span>
+                                <span class="skill-tag">Hugging Face</span>
+                                <span class="skill-tag">scikit-learn</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-10">
+                    <h2 class="section-title">Languages</h2>
+                    <div class="languages-grid">
+                        <div class="language-card">
+                            <div>
+                                <div class="language-name">Aymara</div>
+                                <div class="language-level">Advanced (Native)</div>
+                            </div>
+                        </div>
+                        <div class="language-card">
+                            <div>
+                                <div class="language-name">Spanish</div>
+                                <div class="language-level">Advanced</div>
+                            </div>
+                        </div>
+                        <div class="language-card">
+                            <div>
+                                <div class="language-name">English</div>
+                                <div class="language-level">Intermediate</div>
+                            </div>
+                        </div>
+                        <div class="language-card">
+                            <div>
+                                <div class="language-name">Portuguese</div>
+                                <div class="language-level">Basic</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
