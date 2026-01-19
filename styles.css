@@ -164,8 +164,8 @@ a:hover {
 
 .section {
     padding: var(--space-section) 0;
-    border-bottom: 1px solid var(--border-subtle);
-    scroll-margin-top: 80px;
+    /*border-bottom: 1px solid var(--border-subtle);
+    scroll-margin-top: 80px;*/
     /* Offset for sticky navbar */
 }
 
